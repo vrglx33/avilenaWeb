@@ -4,7 +4,7 @@ import authService from "../core/auth/auth.service";
 import {APP_ROUTES} from "./router.constants";
 
 // @ts-ignore
-export default ({ component: PageComponent, ...rest }) => {
+const PrivateRoute = ({ component: PageComponent, ...rest }) => {
     if (!authService.isLoggedInUser()) {
         // @ts-ignore
         return <Redirect to={APP_ROUTES.LOGIN} />;
@@ -12,3 +12,4 @@ export default ({ component: PageComponent, ...rest }) => {
     return <PageComponent {...rest} />;
 };
 
+export default PrivateRoute;

@@ -1,6 +1,6 @@
 import { FetchError } from './fetch-error';
 import { IAbortableFetch } from './api.constants';
-import authService from '../pages/Login/auth/auth.service';
+import authService from "../auth/auth.service";
 
 const getRequestConfig = (
   init?: RequestInit,

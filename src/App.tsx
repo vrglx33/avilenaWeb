@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Location } from '@reach/router';
 import './App.css';
 import { APP_ROUTES, AppRouterConfig } from './router';
