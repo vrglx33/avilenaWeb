@@ -34,7 +34,7 @@ export const MenuItems = [
     {
         itemName: "Nuestros Productos",
         icon: <TurnedInIcon color="primary"/>,
-        link: APP_ROUTES.DASHBOARD,
+        link: APP_ROUTES.PRODUCTS,
     },
     {
         itemName: "Contáctanos",
@@ -188,4 +188,4 @@ export const Navigation = ({children, title}: IProps) => {
             </main>
         </div>
     );
-}
+};

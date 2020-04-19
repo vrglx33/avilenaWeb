@@ -1,12 +1,14 @@
 import React from "react"
 import {Router, RouteComponentProps} from '@reach/router'
-
-let Home = (props: RouteComponentProps) => <div>Home</div>
-let Dash = (props: RouteComponentProps) => <div>Dash</div>
+import Home from "../pages/home/Home";
+import Products from "../pages/products/Product";
+import Contact from "../pages/contact/Contact";
 
 export default () => (
     <Router>
         <Home path="/"/>
-        <Dash path="dashboard"/>
+        <Home path="/dashboard"/>
+        <Products path="products"/>
+        <Contact path="contact"/>
     </Router>
 );
