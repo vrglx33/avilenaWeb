@@ -115,7 +115,7 @@ interface IProps {
 export const Navigation = ({children, title}: IProps) => {
     const classes = useStyles();
     const theme = useTheme();
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     const handleDrawerOpen = () => {
         setOpen(true);

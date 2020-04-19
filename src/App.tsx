@@ -18,8 +18,7 @@ const theme = createMuiTheme({
         },
     },
 });
-function App() {
-    return (
+const App = () =>  (
         <ThemeProvider theme={theme}>
         <div className="App">
             <Location>
@@ -41,6 +40,4 @@ function App() {
         </div>
         </ThemeProvider>
     );
-}
-
 export default App;
