@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     },
     avatar: {
         margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: "white",
     },
     form: {
         width: '100%', // Fix IE 11 issue.
@@ -70,10 +70,10 @@ const Login = (props: RouteComponentProps) => {
             <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
                 <div className={classes.paper}>
                     <Avatar className={classes.avatar}>
-                        <LockOutlinedIcon />
+                        <img src="avilena-icon.png" />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                        Sign in
+                        Iniciar Sesión
                     </Typography>
                     <form className={classes.form} noValidate>
                         <TextField
