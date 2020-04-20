@@ -1,66 +1,37 @@
-import { ACCESS_TOKEN_KEY } from './auth.constants';
-import {API_ROUTES, fetchJSON} from "../api";
+import {mutation, queryGql} from "../graphQL/graphQL.service";
 
-const setAccessToken = (accesToken: string) => {
-  localStorage.setItem(ACCESS_TOKEN_KEY, accesToken);
-};
-
-const removeAccessToken = () => {
-  localStorage.removeItem(ACCESS_TOKEN_KEY);
-};
-
-const getAccessToken = () => {
-  return localStorage.getItem(ACCESS_TOKEN_KEY);
-};
-
-const getAccessTokenInfo = (): string | null => {
-  const currentAccessToken = getAccessToken();
-
-  if (!currentAccessToken) {
-    return null;
+const auth = {
+  register: async (user:any) => {
+    const query = `
+                    signup( email: "${user.email}", 
+                            phone: "${user.phone}", 
+                            address: "${user.address}", 
+                            username: "${user.name}"){
+                      authorization
+                      user{
+                          username
+                          id
+                      }
+                    }
+                  `;
+    return mutation(query);
+  },
+  login: (user:any) => {
+    const query = `
+                login( email: "${user.email}", 
+                       password: "${user.password}"){
+                  authorization
+                  user {
+                      username
+                      id
+                  }
+                }
+              `;
+    return queryGql(query)
+  },
+  isLoggedInUser: () => {
+    return localStorage.getItem("user");
   }
-
-  return currentAccessToken;
 };
 
-const isLoggedInUser = (): boolean => {
-  return !!getAccessTokenInfo();
-};
-
-const signIn = async (username: string, password: string) => {
-  let responseData: any = await fetchJSON(
-    API_ROUTES.LOGIN,
-    {
-      method: 'POST',
-      body: JSON.stringify({ username, password }),
-    },
-    false
-  );
-  setAccessToken(responseData.token);
-  return responseData;
-};
-
-export const getUserProfileFromToken = () => {
-  const user = fetchJSON(API_ROUTES.USER);
-  localStorage.setItem('user', JSON.stringify(user));
-  return user;
-};
-
-const fetchUserProfile = () => {
-  return fetchJSON(API_ROUTES.LOGIN);
-};
-
-const signOut = () => {
-  removeAccessToken();
-};
-
-const authService = {
-  getAccessToken,
-  getUserProfileFromToken,
-  isLoggedInUser,
-  signIn,
-  signOut,
-  fetchUserProfile,
-};
-
-export default authService;
+export default auth;
