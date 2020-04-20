@@ -39,12 +39,12 @@ export const MenuItems = [
     {
         itemName: "Contáctanos",
         icon: <VibrationIcon color="primary"/>,
-        link: APP_ROUTES.HOME,
+        link: APP_ROUTES.CONTACT,
     },
     {
         itemName: "Registrate",
         icon: <InputIcon color="primary"/>,
-        link: APP_ROUTES.HOME,
+        link: APP_ROUTES.LOGIN,
     }
 ];
 

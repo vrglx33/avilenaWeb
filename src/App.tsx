@@ -26,7 +26,7 @@ const App = () =>  (
                     if (location.pathname !== APP_ROUTES.LOGIN) {
                         return (
                             location.pathname !== APP_ROUTES.LOGIN && (
-                                <Navigation title="Salsamentaria Avileña">
+                                <Navigation title="Excelencia en Carnes Frias">
                                     <AppRouterConfig/>
                                 </Navigation>
                             )

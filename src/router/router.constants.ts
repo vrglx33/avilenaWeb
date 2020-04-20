@@ -3,6 +3,7 @@ export const APP_ROUTES = {
   HOME: '/',
   DASHBOARD: '/dashboard',
   PRODUCTS: '/products',
+  CONTACT: '/contact',
   LOGIN: '/login',
   NOT_FOUND: '/404',
   UNAUTHORIZED: '/unauthorized',
