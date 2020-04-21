@@ -5,6 +5,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import {navigate} from "@reach/router";
+import {APP_ROUTES} from "../../router";
 
 const useStyles = makeStyles({
     root: {
@@ -51,7 +53,7 @@ const CardOutlined = ({title, texts}:IProps) => {
                 }
             </CardContent>
             <CardActions>
-                <Button size="small">Conoce Nuestros Productos</Button>
+                <Button size="small" color="primary"  onClick={()=>navigate(APP_ROUTES.PRODUCTS)}>Conoce Nuestros Productos</Button>
             </CardActions>
         </Card>
     );
