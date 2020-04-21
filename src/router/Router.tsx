@@ -5,6 +5,7 @@ import Products from "../pages/products/Product";
 import Contact from "../pages/contact/Contact";
 import {APP_ROUTES} from "./router.constants";
 import Login from "../pages/login/Login";
+import Register from "../pages/register/Register";
 
 export default () => (
     <Router>
@@ -12,5 +13,6 @@ export default () => (
         <Login path={APP_ROUTES.LOGIN}/>
         <Products path={APP_ROUTES.PRODUCTS}/>
         <Contact path={APP_ROUTES.CONTACT}/>
+        <Register path={APP_ROUTES.REGISTER}/>
     </Router>
 );

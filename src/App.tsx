@@ -23,7 +23,8 @@ const App = () =>  (
         <div className="App">
             <Location>
                 {({location}) => {
-                    if (location.pathname !== APP_ROUTES.LOGIN) {
+                    const isAuth = location.pathname === APP_ROUTES.LOGIN || location.pathname === APP_ROUTES.REGISTER;
+                    if (!isAuth) {
                         return (
                             location.pathname !== APP_ROUTES.LOGIN && (
                                 <Navigation title="Excelencia en Carnes Frias">
@@ -33,7 +34,7 @@ const App = () =>  (
                         );
                     }
                     return (
-                        location.pathname === APP_ROUTES.LOGIN && <AppRouterConfig/>
+                        isAuth && <AppRouterConfig/>
                     );
                 }}
             </Location>

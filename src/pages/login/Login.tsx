@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import {RouteComponentProps} from "@reach/router";
 import auth from "../../core/auth/auth.service";
+import {APP_ROUTES} from "../../router";
 
 const Copyright = () => {
     return (
@@ -81,7 +82,7 @@ const Login = (props: RouteComponentProps) => {
                             required
                             fullWidth
                             id="email"
-                            label="Email Address"
+                            label="Correo"
                             name="email"
                             autoComplete="email"
                             autoFocus
@@ -94,7 +95,7 @@ const Login = (props: RouteComponentProps) => {
                             required
                             fullWidth
                             name="password"
-                            label="Password"
+                            label="Contraseña"
                             type="password"
                             id="password"
                             autoComplete="current-password"
@@ -115,14 +116,14 @@ const Login = (props: RouteComponentProps) => {
                         >
                             Iniciar sesión
                         </Button>
-                        <Grid container>
+                        <Grid container  justify="space-between">
                             <Grid item xs>
-                                <Link href="#" variant="body2">
-                                    Olvidaste tu contraseña?
+                                <Link href={APP_ROUTES.HOME} variant="body2">
+                                    Volver al Inicio
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link href={APP_ROUTES.REGISTER} variant="body2">
                                     Aún no tienes cuenta? Registrate Aquí
                                 </Link>
                             </Grid>

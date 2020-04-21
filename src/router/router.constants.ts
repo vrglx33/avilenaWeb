@@ -5,6 +5,7 @@ export const APP_ROUTES = {
   PRODUCTS: '/products',
   CONTACT: '/contact',
   LOGIN: '/login',
+  REGISTER: '/register',
   NOT_FOUND: '/404',
   UNAUTHORIZED: '/unauthorized',
 };

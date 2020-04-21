@@ -6,7 +6,9 @@ const auth = {
                     signup( email: "${user.email}", 
                             phone: "${user.phone}", 
                             address: "${user.address}", 
-                            username: "${user.name}"){
+                            username: "${user.name}",
+                            password: "${user.password}"
+                            ){
                       authorization
                       user{
                           username
