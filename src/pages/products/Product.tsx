@@ -15,7 +15,7 @@ const Products = (props: RouteComponentProps) => {
             setProductTypes(data.data.getProductType)
         };
         getProductTypes()
-    });
+    },[]);
 
     return <ImageGrid items={productTypes} clickable={true}/>
 };
