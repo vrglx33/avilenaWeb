@@ -3,6 +3,7 @@ export const APP_ROUTES = {
   HOME: '/',
   DASHBOARD: '/dashboard',
   PRODUCTS: '/products',
+  CATEGORY_PRODUCTS: '/products/:id',
   CONTACT: '/contact',
   LOGIN: '/login',
   REGISTER: '/register',

@@ -135,7 +135,7 @@ const Register = (props: RouteComponentProps) => {
                         </Grid>
                     </Grid>
                     <Button
-                        type="submit"
+                        type="button"
                         fullWidth
                         variant="contained"
                         color="primary"

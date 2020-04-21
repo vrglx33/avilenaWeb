@@ -4,6 +4,8 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import {isWidthDown, isWidthUp} from "@material-ui/core";
 import withWidth from "@material-ui/core/withWidth";
+import {navigate} from "@reach/router";
+import {APP_ROUTES} from "../../router";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -28,9 +30,10 @@ const useStyles = makeStyles((theme: Theme) =>
 interface IProps {
     items: any[];
     width: any;
+    clickable?: boolean;
 }
 
-const ImageGrid = ({items, width}:IProps) => {
+const ImageGrid = ({items, width, clickable}:IProps) => {
     const classes = useStyles();
     const isLarge = isWidthUp('sm', width) && isWidthDown('xl', width);
     const isSmall = isWidthDown('md', width);
@@ -38,10 +41,10 @@ const ImageGrid = ({items, width}:IProps) => {
     const colHeight = isLarge ? 300 : isSmall ? 200 : 400;
     return (
         <div className={classes.root}>
-            <GridList cellHeight={isWidthUp('sm', width) ? 400 :200} className={classes.gridList} cols={isWidthUp('sm', width) ? 4 : 2}>
+            <GridList cellHeight={colHeight} className={classes.gridList} cols={colSize}>
                 {items.map((tile) => (
                     //@ts-ignore
-                    <GridListTile key={tile.imageLink} cols={1}>
+                    <GridListTile key={tile.imageLink} cols={1} onClick={() => clickable ? navigate(`${APP_ROUTES.PRODUCTS}/${tile.id}`): console.log("not clickable")}>
                         {/*
                         //@ts-ignore */}
                         <img src={tile.imageLink} alt={tile.name} />
