@@ -43,10 +43,7 @@ const ImageGrid = ({items, width, clickable}:IProps) => {
         <div className={classes.root}>
             <GridList cellHeight={colHeight} className={classes.gridList} cols={colSize}>
                 {items.map((tile) => (
-                    //@ts-ignore
                     <GridListTile key={tile.imageLink} cols={1} onClick={() => clickable ? navigate(`${APP_ROUTES.PRODUCTS}/${tile.id}`): console.log("not clickable")}>
-                        {/*
-                        //@ts-ignore */}
                         <img src={tile.imageLink} alt={tile.name} />
                     </GridListTile>
                 ))}
