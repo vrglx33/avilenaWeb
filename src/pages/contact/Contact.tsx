@@ -52,10 +52,11 @@ const Contact = (props: RouteComponentProps) => {
                         </Typography>
                     </div>
                 </div>
-            */}
+            
             <img src="info-phones.png" />
 
             <img src="info-address.png" />
+            */}
         </div>
     </div>)
 };
