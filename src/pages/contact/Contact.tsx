@@ -38,7 +38,7 @@ const Contact = (props: RouteComponentProps) => {
     const classes = useStyles();
 
     return (<div className={classes.root}>
-        <img src="location.jpg" className={classes.locationContainer} />
+            { /*<img src="location.jpg" className={classes.locationContainer} />*/}
         <div className={classes.infoContainer}>
             {/*
                 <div className={classes.phonesContainer}>
